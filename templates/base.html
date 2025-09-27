@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keep Notes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <header>
+  <div class="nav">
+    <a href="{{ url_for('home') }}" class="brand">Keep Notes</a>
+    <div class="right">
+      <a href="#">About</a>
+      <a href="{{ url_for('notes_page') }}">Notes</a>
+      {% if is_authenticated %}
+        <a href="#">Profile</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+  <div class="breadcrumb">
+    Homepage / {{ current_page }}
+  </div>
+
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

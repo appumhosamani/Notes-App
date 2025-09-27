@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %} Your Notes {% endblock %}
+
+{% block content %}
+<h2 style="text-align:center; margin:20px;">Good Morning {{ user }}!</h2>
+
+
+<div class="notes-list">
+  {% for note in notes %}
+    <div class="note-card" data-id="{{ note.note_id }}">
+      <h3>{{ note.note_title }}</h3>
+      <p>{{ note.note_content }}</p>
+      <div class="note-actions">
+        <button class="btn edit-btn" onclick="openEdit('{{ note.note_id }}', '{{ note.note_title }}', '{{ note.note_content }}')">Edit</button>
+        <button class="btn delete-btn" onclick="deleteNote('{{ note.note_id }}')">Delete</button>
+      </div>
+    </div>
+  {% else %}
+    <p style="text-align:center; color:#666;">No notes yet. Click the + button to add one!</p>
+  {% endfor %}
+</div>
+
+
+<div class="popupnote" onclick="openPopup()">+</div>
+
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <div class="popup-header">
+      <span id="popup-title">Add Notes</span>
+      <span class="close-btn" onclick="closePopup()">×</span>
+    </div>
+    <div class="popup-body">
+      <input type="text" id="note-title" placeholder="Title">
+      <textarea id="note-content" placeholder="Content"></textarea>
+      <div class="popup-actions">
+        <button id="save-btn" class="btn add-btn" onclick="saveNote()">Add</button>
+        <button class="btn cancel-btn" onclick="closePopup()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

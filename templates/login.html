@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login-box">
+  <div class="login-header">Login</div>
+  <div class="login-body">
+    <div id="login-message"></div>
+
+    <label>Email</label>
+    <input type="email" id="login-email" placeholder="Email" required>
+
+    <label>Password</label>
+    <input type="password" id="login-password" placeholder="Password" required>
+
+    <div class="login-actions">
+      <button id="login-btn" class="btn login-btn">Login</button>
+      <a href="{{ url_for('signup') }}" class="btn register-btn">Register</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

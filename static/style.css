@@ -1,0 +1,265 @@
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fdf6e3;
+  color: #333;
+}
+
+header {
+  background: #a7c7c9;
+  padding: 12px 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding: 50px;
+  text-align: center;
+}
+
+.form-box, .login-box {
+  width: 320px;
+  margin: 100px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fffdf6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.form-header, .login-header {
+  background: #f5cda7;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-body, .login-body {
+  padding: 20px;
+}
+
+.form-body label, .login-body label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-body input, 
+.login-body input {
+  width: 95%;
+  padding: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.form-actions, .login-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.login-btn {
+  background: #f08a5d;
+}
+
+.register-btn {
+  background: #40a8c4;
+}
+
+.success { 
+  color: green; 
+  font-size: 14px;
+}
+
+.error { 
+  color: red; 
+  font-size: 14px;
+}
+
+
+/* NAVBAR */
+header {
+  background: #a7c7c9;
+  padding: 12px 20px;
+}
+
+/* .nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} */
+nav {
+    display: flex;
+    justify-content: space-around; /* brand on left, items on right */
+    align-items: center;
+    padding: 10px 20px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.nav .brand {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav .right a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+.nav .right a:hover {
+  text-decoration: underline;
+}
+
+/* BREADCRUMB */
+/* .breadcrumb {
+  font-size: 14px;
+  color: #555;
+  padding: 8px 176px;
+  background: #fdf6e3;
+  border-bottom: 1px solid #ddd;
+} */
+.breadcrumb {
+    font-size: 14px;
+    color: #555;
+    margin-left: 20px;
+}
+.nav-with-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
+
+
+/* Notes -------------------- */
+.notes-list {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.note-card {
+  background: #fff3e0;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.note-actions {
+  margin-top: 10px;
+}
+
+.note-actions .btn {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-btn { background: #4caf50; color: white; }
+.delete-btn { background: #f44336; color: white; }
+
+.popupnote {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  background: #ff9800;
+  color: white;
+  font-size: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* ------------- Popup */
+.popup.hidden { display: none; }
+.popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  background: #ffe8d6;
+  border-radius: 10px;
+  width: 400px;
+  padding: 15px;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.popup-body input,
+.popup-body textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 4px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.popup-actions {
+  text-align: right;
+}
+
+.add-btn { background: #4caf50; color: white; }
+.cancel-btn { background: #f44336; color: white; }
