@@ -32,7 +32,7 @@ def verify_token(token):
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        token = request.cookies.get("token")
+        token = request.cookies.get("access_token")   # 👈 change here
         if not token:
             return redirect(url_for("login"))
         user_id = verify_token(token)
